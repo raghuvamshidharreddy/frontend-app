@@ -1,5 +1,48 @@
-.App-Header{
-    background-color: orange;
-    display: flex;
-    justify-content: space-between;
+.App-Header {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+.App-Header h1 {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.App-Header ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.App-Header li a {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+.App-Header li a:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.App-Header span {
+    font-size: 0.85rem;
+    color: var(--accent);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+}

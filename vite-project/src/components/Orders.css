@@ -1,0 +1,99 @@
+.orders-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.orders-container h2 {
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.order-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.order-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary);
+}
+
+.order-card.completed::before {
+    background: var(--accent);
+}
+
+.order-card h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.order-details {
+    margin-bottom: 1.5rem;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.order-row span:first-child {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.order-row span:last-child {
+    font-weight: 600;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-pending {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
+
+.status-completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent);
+}
+
+.update-btn {
+    width: 100%;
+    margin-top: 1rem;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.update-btn:hover {
+    background: var(--primary);
+    color: white;
+}
