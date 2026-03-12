@@ -9,7 +9,7 @@ function Orders() {
 
     const fetchOrders = async () => {
         try {
-            const url = `${API_URL}/api/orders`;
+            const url = `${API_URL}/api/orders/user/${user._id}`;
             const res = await axios.get(url);
             setOrders(Array.isArray(res.data) ? res.data : []);
         } catch (error) {
@@ -43,7 +43,7 @@ function Orders() {
                             <div className="order-details">
                                 <div className="order-row">
                                     <span>Customer</span>
-                                    <span>{order.email}</span>
+                                    <span>{order.userId?.email || 'N/A'}</span>
                                 </div>
                                 <div className="order-row">
                                     <span>Total Value</span>

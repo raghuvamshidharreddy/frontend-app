@@ -50,9 +50,14 @@ function Cart() {
         try {
             const url = `${API_URL}/api/orders/place`;
             const res = await axios.post(url, {
-                email: user.email,
+                userId: user._id,
                 orderValue: orderValue,
-                items: cart.filter(item => item.quantity > 0)
+                items: cart.filter(item => item.quantity > 0).map(item => ({
+                    productId: item._id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity
+                }))
             });
             alert(res.data.message);
             setCart([]); 
